@@ -13,13 +13,13 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Route::middleware('auth:api')->get('/tasks', function (Request $request) {
+//     return $request->user();
+// });
 
-Route::get('/tasks', 'TaskController@all')->name('tasks.all');
+Route::get('/', 'TaskController@index')->name('tasks.index');
 
-Route::post('/tasks', 'TaskController@store')->name('tasks.store');
+Route::post('/', 'TaskController@store')->name('tasks.store');
 
 Route::get('/tasks/{task}', 'TaskController@show')->name('tasks.show');
 
